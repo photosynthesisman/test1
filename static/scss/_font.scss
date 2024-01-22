@@ -1,68 +1,71 @@
 /* ============================
   Outfit
+
+  ttf 파일밖에 찾지 못해서
+  우선 index.html에 웹주소도 링크했습니다
 ============================*/
 
 @font-face {
   font-family: 'Outfit';
   font-weight: 900;
   font-display: swap;
-  src: local('Outfit Black'), url('../fonts/Outfit-Black.ttf') format('ttf');
+  src: local('Outfit Black'), url('../fonts/Outfit-Black.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Outfit';
   font-weight: 800;
   font-display: swap;
-  src: local('Outfit ExtraBold'), url('../fonts/Outfit-ExtraBold.ttf') format('ttf');
+  src: local('Outfit ExtraBold'), url('../fonts/Outfit-ExtraBold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Outfit';
   font-weight: 700;
   font-display: swap;
-  src: local('Outfit Bold'), url('../fonts/Outfit-Bold.ttf') format('ttf');
+  src: local('Outfit Bold'), url('../fonts/Outfit-Bold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Outfit';
   font-weight: 600;
   font-display: swap;
-  src: local('Outfit SemiBold'), url('../fonts/Outfit-SemiBold.ttf') format('ttf');
+  src: local('Outfit SemiBold'), url('../fonts/Outfit-SemiBold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Outfit';
   font-weight: 500;
   font-display: swap;
-  src: local('Outfit Medium'), url('../fonts/Outfit-Medium.ttf') format('ttf');
+  src: local('Outfit Medium'), url('../fonts/Outfit-Medium.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Outfit';
   font-weight: 400;
   font-display: swap;
-  src: local('Outfit Regular'), url('../fonts/Outfit-Regular.ttf') format('ttf');
+  src: local('Outfit Regular'), url('../fonts/Outfit-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Outfit';
   font-weight: 300;
   font-display: swap;
-  src: local('Outfit Light'), url('../fonts/Outfit-Light.ttf') format('ttf');
+  src: local('Outfit Light'), url('../fonts/Outfit-Light.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Outfit';
   font-weight: 200;
   font-display: swap;
-  src: local('Outfit ExtraLight'), url('../fonts/Outfit-ExtraLight.ttf') format('ttf');
+  src: local('Outfit ExtraLight'), url('../fonts/Outfit-ExtraLight.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Outfit';
   font-weight: 100;
   font-display: swap;
-  src: local('Outfit Thin'), url('../fonts/Outfit-Thin.ttf') format('ttf');
+  src: local('Outfit Thin'), url('../fonts/Outfit-Thin.ttf') format('truetype');
 }
 
 /* ============================

@@ -124,6 +124,9 @@ table {
   border-collapse: collapse;
 }
 a {
+  display: block;
+  width: 100%;
+  height: 100%;
   text-decoration: none;
   color: inherit;
   cursor: pointer;

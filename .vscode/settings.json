@@ -3,8 +3,11 @@
     {
       "format": "compressed",
       "extensionName": ".min.css",
-      "savePath": "~/../css/"
+      "savePath": "/static/css"
     }
+  ],
+  "liveSassCompile.settings.includeItems": [
+    "/static/scss/front.scss"
   ],
   "liveSassCompile.settings.autoprefix": [
     "> 2%",
