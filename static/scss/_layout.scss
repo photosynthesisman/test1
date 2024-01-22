@@ -133,6 +133,8 @@
   height: 8rem;
   background-color: #fff;
   box-shadow: 0 0 10rem rgba(0, 0, 0, 0.15);
+  transition: 0.5s height cubic-bezier(0.075, 0.82, 0.165, 1);
+  box-sizing: border-box;
   z-index: 20;
   .btn-open-career {
     position: absolute;
@@ -154,5 +156,40 @@
   }
   .career-box {
     visibility: hidden;
+  }
+}
+
+/*메인스크롤 이벤트시 스타일*/
+.active {
+  .contents-area {
+    z-index: 20;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 2;
+    }
+  }
+  .career-group-box {
+    height: calc(100% - 8rem);
+    background-color: $black-color;
+    box-shadow: 0px -0.996px 2.627px 0px rgba(0, 0, 0, 0.17), 0px -2.755px 7.263px 0px rgba(0, 0, 0, 0.24), 0px -6.632px 17.485px 0px rgba(0, 0, 0, 0.31), 0px -22px 58px 0px rgba(0, 0, 0, 0.48);
+    h2 {
+      color: $white-color;
+    }
+  }
+  .career-box {
+    visibility: visible;
+    height: 100%;
+    overflow: auto;
+  }
+  .btn-open-career {
+    top: -6.6rem;
+    background-image: url(../images/btn/btn-closed-comtents.svg);
   }
 }
