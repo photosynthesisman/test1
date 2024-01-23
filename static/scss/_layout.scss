@@ -290,6 +290,8 @@
 
 /*메인스크롤 이벤트시 스타일*/
 .active {
+  overflow: hidden;
+  height: 100vh;
   .header {
     z-index: inherit;
     .h1 {
