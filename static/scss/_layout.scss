@@ -1,3 +1,23 @@
+/*팝업 클릭시 스타일*/
+.main.popup {
+  overflow: hidden;
+  .header {
+    z-index: inherit;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: $black-color;
+    opacity: 0.5;
+    z-index: 70;
+  }
+}
+
 /*header*/
 .header {
   position: absolute;
@@ -9,7 +29,7 @@
   width: 100%;
   height: 8rem;
   padding: 0 3.2rem;
-  z-index: 50;
+  z-index: 20;
   .h1 {
     width: 7.2rem;
     height: 2.65rem;
@@ -35,10 +55,10 @@
   top: 2.4rem;
   right: 2rem;
   width: calc(100% - 4rem);
-  height: calc(100vh - 10rem);
+  height: calc(100vh - 4.8rem);
   background-color: $white-color;
   border-radius: $br-12;
-  z-index: 99;
+  z-index: 80;
   .btn-menu-closed {
     position: absolute;
     top: 1rem;
@@ -156,13 +176,37 @@
   }
   .career-box {
     visibility: hidden;
+    padding: 0 1.2rem 8rem;
+  }
+  .round-box {
+    padding-top: 4.8rem;
+    padding-bottom: 5rem;
+    background-color: $white-color;
+    border-radius: $br-40;
+    text-align: center;
+    text-transform: uppercase;
+    .round-header {
+      padding: 0 2.4rem;
+      h3 {
+        font-weight: 700;
+        font-size: 4rem;
+        color: $black-color;
+        line-height: 5rem;
+      }
+      p {
+        font-family: 'Pretendard';
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: $black-color;
+        line-height: 2rem;
+      }
+    }
   }
 }
 
 /*메인스크롤 이벤트시 스타일*/
 .active {
   .contents-area {
-    z-index: 20;
     &::before {
       content: '';
       display: block;
@@ -173,6 +217,21 @@
       bottom: 0;
       background: rgba(0, 0, 0, 0.5);
       z-index: 2;
+    }
+  }
+  .header {
+    z-index: inherit;
+    .h1 {
+      position: fixed;
+      top: 2.7rem;
+      left: 3.2rem;
+      z-index: 50;
+    }
+    .btn-menu {
+      position: fixed;
+      top: 2.4rem;
+      right: 3.2rem;
+      z-index: 50;
     }
   }
   .career-group-box {

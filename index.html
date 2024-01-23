@@ -27,9 +27,7 @@
     <!-- css -->
     <link rel="stylesheet" href="/static/css/front.min.css" />
     <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div id="wrapper" class="main">
@@ -51,7 +49,7 @@
       </header>
       <div class="contents-area" id="container">
         <div class="wrap">
-          <div class="swiper visual-box">
+          <div class="swiper main-swiper visual-box">
             <div class="swiper-wrapper">
               <div class="swiper-slide visual-cell">
                 <img src="/static/images/img/img-ex-mainScroll.png" />
@@ -85,7 +83,7 @@
                     <p>은행</p>
                   </div>
                   <div class="round-body">
-                    <div class="swiper">
+                    <div class="swiper small-swiper career-slide-box">
                       <div class="swiper-wrapper">
                         <div class="swiper-slide"></div>
                         <div class="swiper-slide"></div>
@@ -101,9 +99,11 @@
     </div>
 
     <script>
-      const mainBanner = new Swiper('.visual-box', {
+      const mainBanner = new Swiper('.main-swiper', {
         loop: true,
-        preventInteractionOnTransition: false
+        preventInteractionOnTransition: false,
+        pagination: true,
+        paginationClickable: true
       });
 
       // const workSlider = new Swiper('.workSlider', {
@@ -129,6 +129,7 @@
       document.addEventListener('touchend', handleTouchEnd);
 
       btnMenu.addEventListener('click', menuToggle);
+      btnMenu.addEventListener('touchend', menuToggle);
 
       function menuToggle() {
         if (wrapper.classList.contains('active')) {
