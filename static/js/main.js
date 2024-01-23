@@ -122,8 +122,9 @@ function mainUI() {
 
   function handleTouchMove(e) {
     if (isDragging) {
-      let currentY = e.touches[0].clientY;
-      handleDragMovement(currentY);
+      const { clientX, clientY } = e.touches[0];
+      e.preventDefault(); // iOS에서의 새로고침 방지
+      handleDragMovement(clientX, clientY);
     }
   }
 
