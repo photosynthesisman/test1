@@ -1,5 +1,20 @@
 let mainBanner;
 function mainUI() {
+  function menuPop() {
+    const openBtn = $('.header .btn-menu');
+    const menuPop = openBtn.next();
+    const closedBtn = menuPop.find('.btn-menu-closed');
+
+    openBtn.on('click', function () {
+      $(this).closest('.main').addClass('popup');
+      menuPop.css({ display: 'block' });
+    });
+    closedBtn.on('click', function () {
+      $(this).closest('.menu-list-box').css({ display: 'none' });
+      $(this).closest('.main').removeClass('popup');
+    });
+  }
+
   const mainBanner = new Swiper('.main-swiper', {
     loop: true,
     preventInteractionOnTransition: false,
@@ -7,14 +22,14 @@ function mainUI() {
     paginationClickable: true
   });
 
-  // const workSlider = new Swiper('.workSlider', {
-  //   slidesPerView: 'auto'
-  // });
+  const workSlider = new Swiper('.small-swiper', {
+    slidesPerView: 'auto'
+  });
 
   const wrapper = document.querySelector('#container');
-  const dragElement = document.querySelector('.wrap');
-  const cateList = document.querySelector('.career-box');
-  const btnMenu = document.querySelector('.career-group-box .btn-open-career');
+  const dragElement = document.querySelector('.main-slide-wrap');
+  const cateList = document.querySelector('.contents-box');
+  const btnMenu = document.querySelector('.contents-group-box .btn-open-career');
   let isDragging = false;
   let initialY;
 
@@ -105,4 +120,6 @@ function mainUI() {
     const cateListRect = cateList.getBoundingClientRect();
     return currentY >= cateListRect.top && currentY <= cateListRect.bottom;
   }
+
+  menuPop();
 }

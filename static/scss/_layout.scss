@@ -32,7 +32,7 @@
   z-index: 20;
   .h1 {
     width: 7.2rem;
-    height: 2.65rem;
+    height: 2.6rem;
     a {
       background: url(../images/hic-logo.png) no-repeat 0 0 / cover;
     }
@@ -145,7 +145,7 @@
   }
 }
 
-.career-group-box {
+.contents-group-box {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -174,10 +174,9 @@
       line-height: 8rem;
     }
   }
-  .career-box {
+  .contents-box {
     visibility: hidden;
     padding: 0 1.2rem;
-    padding-bottom: 8rem;
   }
   .round-box {
     padding-top: 4.8rem;
@@ -186,6 +185,11 @@
     border-radius: $br-40;
     text-align: center;
     text-transform: uppercase;
+    overflow: hidden;
+    + .round-box,
+    + .round-box-grp {
+      margin-top: 1.2rem;
+    }
     .round-header {
       padding: 0 2.4rem;
       h3 {
@@ -201,25 +205,91 @@
         color: $black-color;
         line-height: 2rem;
       }
+      + .round-body {
+        margin-top: 4.8rem;
+      }
+    }
+    &.-typo {
+      height: 46rem;
+      padding: 0;
+      background-color: transparent;
+      .round-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 0 1rem;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+        h3 {
+          color: $white-color;
+        }
+        &.-uxw {
+          background-image: url(../images/img/bg-boxImage01.png);
+        }
+        &.-uxm {
+          background-image: url(../images/img/bg-boxImage02.png);
+        }
+        &.-ai {
+          background-image: url(../images/img/bg-boxImage03.png);
+        }
+        &.-vui {
+          background-image: url(../images/img/bg-boxImage04.png);
+        }
+      }
+    }
+    .career-slide-box {
+      padding: 0 2.4rem;
+      .slide-cell {
+        width: 28rem;
+        + .slide-cell {
+          margin-left: 1.6rem;
+        }
+      }
+      .preview-box {
+        height: 20rem;
+        border-radius: $br-12;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .context-box {
+        font-family: 'Pretendard';
+        margin-top: 2.4rem;
+        text-align: left;
+        color: $black-color;
+        .tit {
+          font-weight: 700;
+          font-size: 2.4rem;
+          line-height: 2.8rem;
+        }
+        .txt {
+          margin-top: 0.6rem;
+          font-weight: 400;
+          font-size: 1.5rem;
+          line-height: 2.2rem;
+          word-break: keep-all !important;
+          @include ellipsis($line: 2);
+        }
+      }
+    }
+  }
+  .round-box-grp {
+    + .round-box,
+    + .round-box-grp {
+      margin-top: 1.2rem;
     }
   }
 }
 
 /*메인스크롤 이벤트시 스타일*/
 .active {
-  .contents-area {
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 2;
-    }
-  }
   .header {
     z-index: inherit;
     .h1 {
@@ -234,22 +304,106 @@
       right: 3.2rem;
       z-index: 50;
     }
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 2;
+    }
   }
-  .career-group-box {
+  .contents-group-box {
     height: calc(100% - 8rem);
     background-color: $black-color;
     box-shadow: 0px -0.996px 2.627px 0px rgba(0, 0, 0, 0.17), 0px -2.755px 7.263px 0px rgba(0, 0, 0, 0.24), 0px -6.632px 17.485px 0px rgba(0, 0, 0, 0.31), 0px -22px 58px 0px rgba(0, 0, 0, 0.48);
     h2 {
       color: $white-color;
     }
+    .inner {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+    }
   }
-  .career-box {
+  .contents-box {
     visibility: visible;
     height: 100%;
-    overflow: auto;
   }
   .btn-open-career {
     top: -6.6rem;
     background-image: url(../images/btn/btn-closed-comtents.svg);
+  }
+}
+
+/*footer*/
+.footer {
+  margin: 8rem -1.2rem 0;
+  padding: 8rem 3.2rem;
+  background-color: $black-color2;
+  color: $white-color;
+  .logo {
+    width: 12rem;
+    height: 4.4rem;
+    margin-bottom: 8rem;
+    a {
+      background: url(../images/hic-logo.png) no-repeat 0 0 / cover;
+    }
+  }
+  .f-menu-list {
+    display: none;
+    .menu-cell {
+      + .menu-cell {
+        margin-top: 2rem;
+      }
+    }
+    a {
+      font-weight: 600;
+      font-size: 4rem;
+      line-height: 5rem;
+    }
+  }
+  .f-info-grp {
+    display: flex;
+    gap: 4.6rem;
+    .tit {
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+      font-size: 1.8rem;
+      line-height: 2.2rem;
+    }
+    .txt {
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 2.4rem;
+      color: #bbb;
+    }
+  }
+  .copyright {
+    display: block;
+    margin-top: 4rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2.1rem;
+    color: #777;
+  }
+}
+
+/*스크롤탑 버튼*/
+.scroll-top {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  width: 6rem;
+  height: 6rem;
+  z-index: 70;
+  .btn-scroll-top {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.2) url(../images/btn/btn-scrollTop.svg) no-repeat center center/ 1.6rem 0.8rem;
   }
 }
