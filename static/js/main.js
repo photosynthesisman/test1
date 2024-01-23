@@ -1,5 +1,13 @@
 let mainBanner;
+
 function mainUI() {
+  const wrapper = document.querySelector('#container');
+  const dragElement = document.querySelector('.main-slide-wrap');
+  const cateList = document.querySelector('.contents-box');
+  const btnMenu = document.querySelector('.contents-group-box .btn-open-career');
+  let isDragging = false;
+  let initialY;
+
   function menuPop() {
     const openBtn = $('.header .btn-menu');
     const menuPop = openBtn.next();
@@ -25,6 +33,11 @@ function mainUI() {
     scrollArea.scroll(function () {
       if ($(this).scrollTop() > 100) {
         scrollBtn.fadeIn();
+      } else if (scrollArea.scrollTop() <= 0) {
+        // 스크롤 0 일때 닫기
+        setTimeout(function () {
+          wrapper.classList.remove('active');
+        }, 100);
       } else {
         scrollBtn.fadeOut();
       }
@@ -51,15 +64,13 @@ function mainUI() {
   });
 
   const workSlider = new Swiper('.small-swiper', {
-    slidesPerView: 'auto'
+    slidesPerView: 'auto',
+    breakpoints: {
+      '@1.50': {
+        slidesPerView: 3.8
+      }
+    }
   });
-
-  const wrapper = document.querySelector('#container');
-  const dragElement = document.querySelector('.main-slide-wrap');
-  const cateList = document.querySelector('.contents-box');
-  const btnMenu = document.querySelector('.contents-group-box .btn-open-career');
-  let isDragging = false;
-  let initialY;
 
   wrapper.addEventListener('mousedown', handleMouseDown);
   dragElement.addEventListener('touchstart', handleTouchStart);
@@ -83,12 +94,8 @@ function mainUI() {
   }
 
   function handleWheel(e) {
-    // 휠을 아래로 내렸을 때 isDragging을 true로 설정
-    if (e.deltaY > 0) {
-      wrapper.classList.add('active');
-    } else {
-      wrapper.classList.remove('active');
-    }
+    const direction = e.deltaY > 0 ? 'down' : 'up';
+    wrapper.classList.toggle('active', direction === 'down');
   }
 
   function handleMouseDown(e) {
