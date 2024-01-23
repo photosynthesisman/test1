@@ -124,7 +124,7 @@ function mainUI() {
     if (isDragging) {
       const { clientX, clientY } = e.touches[0];
       e.preventDefault(); // iOS에서의 새로고침 방지
-      handleDragMovement(clientX, clientY);
+      handleDragMovement(clientY);
     }
   }
 
