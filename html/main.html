@@ -27,11 +27,12 @@
   <body>
     <div id="wrapper" class="main">
       <div class="contents-area" id="container">
-        <header class="header">
+        <!-- header -->
+        <header id="#header" class="header">
           <h1 class="h1"><a href="main.html" role="button" aria-label="홈페이지 바로가기"></a></h1>
           <div class="right">
             <button type="button" aria-label="메뉴 열기" class="btn-menu">MENU</button>
-            <div class="menu-list-box">
+            <nav class="menu-list-box">
               <ol>
                 <li class="menu-li"><a href="#none" role="button">About</a></li>
                 <li class="menu-li"><a href="#none" role="button">Work</a></li>
@@ -40,9 +41,11 @@
               </ol>
               <button type="button" aria-label="본사소개서 다운로드" class="btn-download">Company Brief</button>
               <button type="button" aria-label="메뉴 닫기" class="btn-menu-closed"></button>
-            </div>
+            </nav>
           </div>
         </header>
+        <!-- header end -->
+        <!-- main slide -->
         <div class="main-slide-wrap">
           <div class="swiper main-swiper visual-box">
             <div class="swiper-wrapper">
@@ -72,6 +75,8 @@
             <div class="swiper-pagination"></div>
           </div>
         </div>
+        <!-- main slide end -->
+        <!-- contents -->
         <div class="contents-group-box">
           <button type="button" class="btn-open-career" aria-label="작업물 리스트로 이동"></button>
           <div class="inner">
@@ -341,7 +346,8 @@
                   </div>
                 </div>
               </div>
-              <footer class="footer">
+              <!-- footer -->
+              <footer id="footer" class="footer">
                 <div class="inner">
                   <div class="logo"><a href="main.html" role="button"></a></div>
                   <div class="f-menu-list">
@@ -373,9 +379,11 @@
                   <span class="copyright">&copy; 2024 HiUX Consulting. All Rights Reserved.</span>
                 </div>
               </footer>
+              <!-- footer end -->
             </div>
           </div>
         </div>
+        <!-- contents end -->
         <div class="scroll-top"><button type="button" class="btn-scroll-top" aria-label="페이지 상단으로 이동"></button></div>
       </div>
     </div>
