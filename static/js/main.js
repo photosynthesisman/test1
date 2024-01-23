@@ -11,12 +11,11 @@ function mainUI() {
   //   slidesPerView: 'auto'
   // });
 
-  const wrapper = document.querySelector('#wrapper');
-  const dragElement = document.querySelector('#container');
+  const wrapper = document.querySelector('#container');
+  const dragElement = document.querySelector('.wrap');
   const cateList = document.querySelector('.career-box');
   const btnMenu = document.querySelector('.career-group-box .btn-open-career');
   let isDragging = false;
-  let initialX;
   let initialY;
 
   wrapper.addEventListener('mousedown', handleMouseDown);
@@ -30,7 +29,7 @@ function mainUI() {
   document.addEventListener('touchend', handleTouchEnd);
 
   btnMenu.addEventListener('click', menuToggle);
-  btnMenu.addEventListener('touchend', menuToggle);
+  //btnMenu.addEventListener('touchend', menuToggle);
 
   function menuToggle() {
     if (wrapper.classList.contains('active')) {
@@ -54,7 +53,6 @@ function mainUI() {
     if (e.button === 0) {
       e.preventDefault();
       isDragging = true;
-      initialX = e.clientX;
       initialY = e.clientY;
     }
   }
@@ -62,23 +60,20 @@ function mainUI() {
   function handleTouchStart(e) {
     e.preventDefault();
     isDragging = true;
-    initialX = e.touches[0].clientX;
     initialY = e.touches[0].clientY;
   }
 
   function handleDrag(e) {
     if (isDragging) {
-      let currentX = e.clientX;
       let currentY = e.clientY;
-      handleDragMovement(currentX, currentY);
+      handleDragMovement(currentY);
     }
   }
 
   function handleTouchMove(e) {
     if (isDragging) {
-      let currentX = e.touches[0].clientX;
       let currentY = e.touches[0].clientY;
-      handleDragMovement(currentX, currentY);
+      handleDragMovement(currentY);
     }
   }
 
@@ -90,13 +85,12 @@ function mainUI() {
     isDragging = false;
   }
 
-  function handleDragMovement(currentX, currentY) {
-    let deltaX = currentX - initialX;
+  function handleDragMovement(currentY) {
     let deltaY = currentY - initialY;
 
-    console.log(currentX, deltaX, currentY, deltaY);
+    console.log(currentY, deltaY);
 
-    if (isInsideCateList(currentX, currentY)) {
+    if (isInsideCateList(currentY)) {
       isDragging = false;
     }
 
@@ -107,7 +101,7 @@ function mainUI() {
     }
   }
 
-  function isInsideCateList(currentX, currentY) {
+  function isInsideCateList(currentY) {
     const cateListRect = cateList.getBoundingClientRect();
     return currentY >= cateListRect.top && currentY <= cateListRect.bottom;
   }
