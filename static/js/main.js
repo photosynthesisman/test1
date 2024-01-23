@@ -15,6 +15,34 @@ function mainUI() {
     });
   }
 
+  function scrollTop() {
+    const scrollArea = $('.contents-group-box .inner');
+    const scrollBtn = $('.scroll-top');
+    const btn = scrollBtn.children();
+
+    scrollBtn.hide();
+
+    scrollArea.scroll(function () {
+      if ($(this).scrollTop() > 100) {
+        scrollBtn.fadeIn();
+      } else {
+        scrollBtn.fadeOut();
+      }
+    });
+
+    btn.on('click', function () {
+      scrollArea.animate(
+        {
+          scrollTop: 0
+        },
+        800,
+        function () {
+          $(this).closest('#container').removeClass('active');
+        }
+      );
+    });
+  }
+
   const mainBanner = new Swiper('.main-swiper', {
     loop: true,
     preventInteractionOnTransition: false,
@@ -122,4 +150,5 @@ function mainUI() {
   }
 
   menuPop();
+  scrollTop();
 }
