@@ -6,6 +6,7 @@ function mainUI() {
   const cateList = document.querySelector('.contents-box');
   const btnMenu = document.querySelector('.contents-group-box .btn-open-career');
   let isDragging = false;
+  let initialX;
   let initialY;
 
   function menuPop() {
@@ -103,6 +104,7 @@ function mainUI() {
     if (e.button === 0) {
       e.preventDefault();
       isDragging = true;
+      initialX = e.clientX;
       initialY = e.clientY;
     }
   }
@@ -110,21 +112,23 @@ function mainUI() {
   function handleTouchStart(e) {
     e.preventDefault();
     isDragging = true;
+    initialX = e.touches[0].clientX;
     initialY = e.touches[0].clientY;
   }
 
   function handleDrag(e) {
     if (isDragging) {
+      let currentX = e.clientX;
       let currentY = e.clientY;
-      handleDragMovement(currentY);
+      handleDragMovement(currentX, currentY);
     }
   }
 
   function handleTouchMove(e) {
     if (isDragging) {
-      const { clientX, clientY } = e.touches[0];
-      e.preventDefault(); // iOS에서의 새로고침 방지
-      handleDragMovement(clientY);
+      let currentX = e.touches[0].clientX;
+      let currentY = e.touches[0].clientY;
+      handleDragMovement(currentX, currentY);
     }
   }
 
@@ -136,12 +140,13 @@ function mainUI() {
     isDragging = false;
   }
 
-  function handleDragMovement(currentY) {
+  function handleDragMovement(currentX, currentY) {
+    let deltaX = currentX - initialX;
     let deltaY = currentY - initialY;
 
-    console.log(currentY, deltaY);
+    console.log(currentX, deltaX, currentY, deltaY);
 
-    if (isInsideCateList(currentY)) {
+    if (isInsideCateList(currentX, currentY)) {
       isDragging = false;
     }
 
@@ -152,7 +157,7 @@ function mainUI() {
     }
   }
 
-  function isInsideCateList(currentY) {
+  function isInsideCateList(currentX, currentY) {
     const cateListRect = cateList.getBoundingClientRect();
     return currentY >= cateListRect.top && currentY <= cateListRect.bottom;
   }
