@@ -47,6 +47,7 @@
     width: 7.2rem;
     height: 2.6rem;
     a {
+      font-size: 0;
       background: url(../images/hic-logo.png) no-repeat 0 0 / cover;
     }
   }
@@ -273,11 +274,6 @@
     .career-slide-box {
       padding: 0 2.4rem;
       overflow: visible;
-      width: calc(100% - 4.8rem);
-      .swiper-wrapper {
-        right: 4.8rem;
-        padding-left: 2.4rem;
-      }
       .slide-cell {
         width: 28rem;
         + .slide-cell {
@@ -445,36 +441,22 @@
 ========================================================================== */
 /* pc */
 @media only screen and (min-width: 1280px) {
-  body {
-    // &:after {
-    //   content: 'PC';
-    //   position: absolute;
-    //   font-weight: 900;
-    //   left: 50%;
-    //   top: 50%;
-    //   transform: translate(-50%, -50%);
-    //   color: red;
-    //   z-index: 100;
-    //   font-size: 3rem;
-    // }
-  }
-  .contents-group-box .round-box .career-slide-box .preview-box {
-    height: auto;
+  .contents-group-box {
+    .round-body {
+      .career-slide-box {
+        width: calc(100% - 4.8rem);
+        .swiper-wrapper {
+          right: 4.8rem;
+          padding-left: 2.4rem;
+        }
+        .preview-box {
+          height: auto;
+        }
+      }
+    }
   }
 }
+
 /* 테블릿 */
 @media only screen and (min-width: 768px) and (max-width: 1279px) {
-  body {
-    // &:after {
-    //   content: '테블릿';
-    //   font-weight: 900;
-    //   position: absolute;
-    //   left: 50%;
-    //   top: 50%;
-    //   transform: translate(-50%, -50%);
-    //   color: red;
-    //   z-index: 100;
-    //   font-size: 3rem;
-    // }
-  }
 }
