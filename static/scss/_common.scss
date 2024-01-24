@@ -6,6 +6,23 @@ html {
   height: 100%;
   font-size: 62.5%;
   text-size-adjust: none;
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 0 0.4rem rgba(0, 0, 0, 0.1);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: inset 0 0 0.4rem rgba(0, 0, 0, 0.2);
+    &:hover {
+      background: rgba(0, 0, 0, 0.6);
+    }
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background: rgba(0, 0, 0, 0);
+  }
 }
 body {
   font: normal 1.6rem/1.44 'Outfit', 'Apple SD Gothic Neo', 'AppleSDGothicNeo', sans-serif;
