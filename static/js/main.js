@@ -9,6 +9,7 @@ function mainUI() {
   let initialX;
   let initialY;
 
+  // 메인 gnb 메뉴
   function menuPop() {
     const openBtn = $('.header .btn-menu');
     const menuPop = openBtn.next();
@@ -24,6 +25,7 @@ function mainUI() {
     });
   }
 
+  //메인 스크롤 top 버튼
   function scrollTop() {
     const scrollArea = $('.contents-group-box .inner');
     const scrollBtn = $('.scroll-top');
@@ -56,7 +58,10 @@ function mainUI() {
       );
     });
   }
+  menuPop();
+  scrollTop();
 
+  //메인 배너 스와이퍼
   const mainBanner = new Swiper('.main-swiper', {
     loop: true,
     preventInteractionOnTransition: false,
@@ -64,15 +69,20 @@ function mainUI() {
     paginationClickable: true
   });
 
+  //메인 work 스와이퍼
   const workSlider = new Swiper('.small-swiper', {
     slidesPerView: 'auto',
     breakpoints: {
-      '@1.50': {
+      1024: {
         slidesPerView: 3.8
+      },
+      768: {
+        slidesPerView: 2.8
       }
     }
   });
 
+  //메인 휠 스크롤,터치 무브 이벤트
   wrapper.addEventListener('mousedown', handleMouseDown);
   dragElement.addEventListener('touchstart', handleTouchStart);
   dragElement.addEventListener('wheel', handleWheel);
@@ -161,7 +171,4 @@ function mainUI() {
     const cateListRect = cateList.getBoundingClientRect();
     return currentY >= cateListRect.top && currentY <= cateListRect.bottom;
   }
-
-  menuPop();
-  scrollTop();
 }

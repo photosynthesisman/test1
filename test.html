@@ -277,12 +277,8 @@
       }
 
       function handleWheel(e) {
-        // 휠을 아래로 내렸을 때 isDragging을 true로 설정
-        if (e.deltaY > 0) {
-          wrapper.classList.add('active');
-        } else {
-          wrapper.classList.remove('active');
-        }
+        const direction = e.deltaY > 0 ? 'down' : 'up';
+        wrapper.classList.toggle('active', direction === 'down');
       }
 
       function handleMouseDown(e) {
@@ -329,8 +325,6 @@
       function handleDragMovement(currentX, currentY) {
         let deltaX = currentX - initialX;
         let deltaY = currentY - initialY;
-
-        console.log(currentX, deltaX, currentY, deltaY);
 
         if (isInsideCateList(currentX, currentY)) {
           isDragging = false;
