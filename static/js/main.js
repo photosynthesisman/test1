@@ -4,6 +4,8 @@ function mainUI() {
   const wrapper = document.querySelector('#container');
   const dragElement = document.querySelector('.main-slide-wrap');
   const cateList = document.querySelector('.contents-box');
+  document.querySelector;
+
   const btnMenu = document.querySelector('.contents-group-box .btn-open-career');
   let isDragging = false;
   let initialX;
@@ -154,16 +156,17 @@ function mainUI() {
     let deltaX = currentX - initialX;
     let deltaY = currentY - initialY;
 
-    console.log(currentX, deltaX, currentY, deltaY);
+    const scrollArea = $('.contents-group-box .inner');
 
     if (isInsideCateList(currentX, currentY)) {
       isDragging = false;
     }
 
-    if (deltaY > 100) {
+    if (deltaY > 120) {
       wrapper.classList.remove('active');
-    } else if (deltaY < -100) {
+    } else if (deltaY < -120) {
       wrapper.classList.add('active');
+      scrollArea.scrollTop(1);
     }
   }
 
