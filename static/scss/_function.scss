@@ -1,0 +1,9 @@
+@use 'sass:math';
+
+@function -vw($size, $contentWidth: 1920) {
+  @return math.div($size, $contentWidth) * 100vw;
+}
+
+@function -per($height, $width) {
+  @return math.div($height, $width) * 100%;
+}

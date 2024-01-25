@@ -67,8 +67,10 @@ function mainUI() {
   const mainBanner = new Swiper('.main-swiper', {
     loop: true,
     preventInteractionOnTransition: false,
-    pagination: true,
-    paginationClickable: true
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
   });
 
   //메인 work 스와이퍼
@@ -76,7 +78,7 @@ function mainUI() {
     slidesPerView: 'auto',
     breakpoints: {
       1024: {
-        slidesPerView: 3.8
+        slidesPerView: 3.6
       },
       768: {
         slidesPerView: 2.8
