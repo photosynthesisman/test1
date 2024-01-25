@@ -466,6 +466,11 @@
       left: 8rem;
       z-index: 50;
     }
+    .btn-menu {
+      position: absolute;
+      right: 7rem;
+      top: 5rem;
+    }
   }
   .visual-box {
     .visual-cell {
@@ -652,6 +657,10 @@
           margin: 0;
         }
       }
+      + .round-box,
+      + .round-box-grp {
+        margin-top: 0;
+      }
       &.-typo {
         a {
           padding-bottom: -per(460, 860);
@@ -703,7 +712,7 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      font-size: 1.6rem;
+      font-size: -vw(16);
     }
   }
 }

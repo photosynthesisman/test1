@@ -78,10 +78,10 @@ function mainUI() {
     slidesPerView: 'auto',
     breakpoints: {
       1024: {
-        slidesPerView: 3.6
+        slidesPerView: 3.4
       },
       768: {
-        slidesPerView: 2.8
+        slidesPerView: 2.2
       }
     }
   });
