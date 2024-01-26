@@ -539,8 +539,9 @@
     .swiper-pagination {
       top: auto;
       bottom: 27rem;
-      padding-left: 16rem;
+      left: 16rem;
       text-align: left;
+      width: auto;
       .swiper-pagination-bullet {
         width: 1rem;
         height: 1rem;
