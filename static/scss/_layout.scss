@@ -667,11 +667,11 @@
           .context-box {
             .tit {
               font-size: max(3.2rem, -vw(32));
-              line-height: 3.8rem;
+              line-height: max(3.8rem, -vw(32));
             }
             .txt {
               font-size: max(1.6rem, -vw(16));
-              line-height: 2.4rem;
+              line-height: max(2.4rem, -vw(16));
             }
           }
           .slide-cell {
