@@ -61,7 +61,10 @@
   .btn-menu {
     width: 3.2rem;
     height: 3.2rem;
-    background: url(../images/btn/btn-menu.svg) no-repeat 0 0 / cover;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60' fill='none'%3E%3Cpath d='M14 18H46' stroke='white' stroke-width='3'/%3E%3Cpath d='M14 30H46' stroke='white' stroke-width='3'/%3E%3Cpath d='M14 42H46' stroke='white' stroke-width='3'/%3E%3C/svg%3E");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     font-weight: 700;
     font-size: 2rem;
     color: $white-color;
@@ -86,7 +89,10 @@
     right: 1.2rem;
     width: 3.2rem;
     height: 3.2rem;
-    background: url(../images/btn/btn-closed.svg) no-repeat 0 0 / cover;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' fill='none'%3E%3Cpath d='M6 6L25.799 25.799' stroke='black' stroke-width='2' stroke-linecap='square' stroke-linejoin='round'/%3E%3Cpath d='M6 26L25.799 6.20101' stroke='black' stroke-width='2' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
   ol {
     width: 100%;
