@@ -198,7 +198,10 @@
     left: 50%;
     width: 4.8rem;
     height: 4.8rem;
-    background: url(../images/btn/btn-open-comtents.svg) no-repeat 0 0 / cover;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M23.7071 15L24.4142 15.7071L39.4142 30.7071L38 32.1213L23.7071 17.8284L9.41421 32.1213L8 30.7071L23 15.7071L23.7071 15Z' fill='white'/%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     transform: translateX(-50%);
   }
   .title-box {
@@ -481,7 +484,7 @@
     }
     .btn-open-career {
       top: -6.6rem;
-      background-image: url(../images/btn/btn-closed-comtents.svg);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M23.7071 32.8284L23 32.1213L8 17.1213L9.41422 15.7071L23.7071 30L38 15.7071L39.4142 17.1213L24.4142 32.1213L23.7071 32.8284Z' fill='white'/%3E%3C/svg%3E");
     }
   }
 }
