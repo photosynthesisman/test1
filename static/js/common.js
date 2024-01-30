@@ -1,7 +1,15 @@
-let mainBanner;
-
 function commonUI() {
   // gnb 메뉴
+  let $gnbTxt = $('.commonGnb li a');
+  const $title = $.trim($('#pageTit').text());
+  $gnbTxt.each(function () {
+    if ($(this).text() === $title) {
+      console.log($(this).text(), $title);
+      var $parents = $(this).parents('li');
+      $parents.addClass('active');
+    }
+  });
+
   function menuPop() {
     const openBtn = $('.header .btn-menu');
 
@@ -26,6 +34,7 @@ function commonUI() {
   function scrollTop() {
     const scrollArea = $('.contents-group-box .inner');
     const scrollBtn = $('.scroll-top');
+    const wrapper = document.querySelector('#container');
     const btn = scrollBtn.children();
 
     scrollBtn.hide();
@@ -60,6 +69,7 @@ function commonUI() {
 }
 
 // 메인
+let mainBanner;
 function mainUI() {
   const wrapper = document.querySelector('#container');
   const dragElement = document.querySelector('.main-slide-wrap');
