@@ -4,13 +4,24 @@ function commonUI() {
   // gnb 메뉴
   function menuPop() {
     const openBtn = $('.header .btn-menu');
-    const menuPop = openBtn.next();
-    const closedBtn = menuPop.find('.btn-menu-closed');
+
+    document.addEventListener('scroll', function () {
+      const scrollTopValue = document.documentElement.scrollTop || document.body.scrollTop;
+      const header = document.querySelector('.header');
+      const headerH = header.clientHeight;
+
+      if (scrollTopValue >= headerH) {
+        header.classList.add('fixed');
+      } else {
+        header.classList.remove('fixed');
+      }
+    });
 
     openBtn.on('click', function () {
       $(this).closest('body').delay().toggleClass('gnbPopup');
     });
   }
+
   // 스크롤 top 버튼
   function scrollTop() {
     const scrollArea = $('.contents-group-box .inner');
