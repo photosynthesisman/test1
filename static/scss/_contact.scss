@@ -24,27 +24,27 @@
       margin-top: 1.6rem;
       background: #6246d5 url(../images/img/recruit-bg.png) top right / 23rem no-repeat;
     }
-    span {
+    .contact_txt {
       font-size: 2.4rem;
-    }
-    strong {
-      display: block;
-      margin-top: 2.4rem;
-      font-size: 3.2rem;
-      text-decoration: underline;
+      .mail_address {
+        display: block;
+        margin-top: 2.4rem;
+        font-size: 3.2rem;
+        text-decoration: underline;
+      }
     }
   }
 }
 .offic-wrap {
   margin-top: 12rem;
   padding-left: 2rem;
-  h3 {
+  .office-tit {
     font-size: 3.2rem;
-    & + p {
-      margin-top: 4rem;
-      font-size: 2.4rem;
-      font-weight: 700;
-    }
+  }
+  .office-address {
+    margin-top: 4rem;
+    font-size: 2.4rem;
+    font-weight: 700;
   }
   .eng-address {
     margin-top: 1.2rem;
@@ -55,7 +55,7 @@
     display: block;
     align-items: center;
     margin-top: 3rem;
-    a {
+    .tel-num {
       width: fit-content;
       font-size: 1.6rem;
       font-weight: 700;
@@ -63,7 +63,7 @@
         margin-bottom: 1.6rem;
       }
     }
-    span {
+    .num-type {
       margin-right: 1.2rem;
       font-size: 1.5rem;
       color: #999;
@@ -108,14 +108,14 @@
         margin-top: 0;
         background: #6246d5 url(../images/img/recruit-bg.png) center right / contain no-repeat;
       }
-      span {
+      .contact_txt {
         font-size: 2.8rem;
-      }
-      strong {
-        display: block;
-        margin-top: 4.8rem;
-        font-size: 3.2rem;
-        text-decoration: underline;
+        .mail_address {
+          display: block;
+          margin-top: 4.8rem;
+          font-size: 3.2rem;
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -124,13 +124,13 @@
     .txt-space {
       display: none;
     }
-    h3 {
+    .office-tit {
       font-size: 4.8rem;
-      & + p {
-        margin-top: 3.2rem;
-        font-size: 3.6rem;
-        font-weight: 700;
-      }
+    }
+    .office-address {
+      margin-top: 3.2rem;
+      font-size: 3.6rem;
+      font-weight: 700;
     }
     .eng-address {
       margin-top: 1.2rem;
@@ -141,7 +141,7 @@
       display: flex;
       align-items: center;
       margin-top: 3.7rem;
-      a {
+      .tel-num {
         width: fit-content;
         font-size: 2rem;
         font-weight: 700;
@@ -150,7 +150,7 @@
           margin-bottom: 0;
         }
       }
-      span {
+      .num-type {
         margin-right: 1.2rem;
         font-size: 1.6rem;
         color: #999;
