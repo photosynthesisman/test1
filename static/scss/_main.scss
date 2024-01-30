@@ -20,7 +20,6 @@
       }
     }
   }
-
   .footer {
     margin: 8rem -1.2rem 0;
   }
@@ -278,10 +277,10 @@
           z-index: 50;
         }
         .btn-menu {
-          position: absolute;
+          position: fixed;
           top: 2.4rem;
           right: 3.2rem;
-          z-index: 50;
+          z-index: 90;
         }
         &::before {
           opacity: 1;
@@ -312,7 +311,35 @@
     }
   }
 }
-
+/* gnb 메인 페이지 */
+.gnbPopup {
+  .main {
+    .header {
+      .btn-menu {
+        position: fixed;
+        right: 4rem;
+        top: 4rem;
+        .gnb-icon {
+          background-color: rgba(0, 0, 0, 0);
+        }
+        .gnb-icon::before,
+        .gnb-icon:after {
+          background-color: $black-color;
+        }
+      }
+    }
+    .contents-area {
+      &.active {
+        .header {
+          .btn-menu {
+            right: 4rem;
+            top: 4rem;
+          }
+        }
+      }
+    }
+  }
+}
 /* ==========================================================================
 	Media Queries for Responsive Design. (미디어 쿼리 분기점)
 ========================================================================== */
@@ -368,7 +395,7 @@
         }
         .swiper-pagination-bullet-active {
           width: 4rem;
-          background-color: #f84773;
+          background-color: $coral-color;
           border-radius: 1rem;
         }
       }
@@ -377,14 +404,14 @@
       &.active {
         .header {
           .h1 {
-            bottom: 3.1rem;
             left: 8rem;
-            top: auto;
+            top: 6rem;
           }
           .btn-menu {
-            bottom: 3rem;
-            right: 7rem;
-            top: auto;
+            margin-right: 0;
+            top: 5rem;
+            right: 8.4rem;
+            position: absolute;
           }
         }
         .contents-group-box {
@@ -479,6 +506,31 @@
         + .round-box,
         + .round-box-grp {
           margin-top: 10rem;
+        }
+      }
+    }
+    .footer {
+      margin: 8rem 0 0;
+    }
+  }
+  /* gnb 메인 페이지 */
+  .gnbPopup {
+    .main {
+      .header {
+        .btn-menu {
+          position: absolute;
+          right: 7rem;
+          top: 5rem;
+        }
+      }
+      .contents-area {
+        &.active {
+          .header {
+            .btn-menu {
+              right: 7rem;
+              top: 5rem;
+            }
+          }
         }
       }
     }
