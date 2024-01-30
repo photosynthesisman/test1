@@ -1,5 +1,119 @@
 @use 'sass:math';
 /* work */
+.pc-break {
+  display: none;
+}
+.work-contents {
+  .sub-tit {
+    font-family: 'Pretendard';
+    font-size: 4.8rem;
+    font-weight: 800;
+    line-height: 5.7rem;
+  }
+  .sub-txt-box {
+    margin-top: 6.6rem;
+    padding: 0 2rem;
+  }
+  .sub-txt {
+    font-family: 'Pretendard';
+    font-weight: 600;
+    font-size: 1.6rem;
+  }
+  .info-box {
+    display: flex;
+    row-gap: 1.2rem;
+    flex-direction: column;
+    margin-top: 2rem;
+    dl {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+      text-transform: uppercase;
+    }
+    dt {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #777;
+    }
+    dd {
+      font-weight: 600;
+      font-size: 1.6rem;
+    }
+  }
+  .tag-box {
+    display: flex;
+    gap: 0.8rem;
+    margin: 4.8rem 0;
+    .tag {
+      padding: 0 1.6rem;
+      border-radius: $br-100;
+      background-color: #f5f5f5;
+      font-size: 1.5rem;
+      color: #666;
+      font-weight: 400;
+      text-align: center;
+      line-height: 3.6rem;
+      &::before {
+        content: '#';
+        display: inline-block;
+      }
+    }
+  }
+  .visual-img-box {
+    width: calc(100% + 2.4rem);
+    margin-left: -1.2rem;
+    img {
+      width: 100%;
+    }
+  }
+  .next-page-box {
+    position: relative;
+    width: calc(100% + 2.4rem);
+    height: 32rem;
+    margin-left: -1.2rem;
+    background: no-repeat center center / cover;
+    &.-kkl {
+      background-image: url(../images/img/img-visu-kkl.png);
+    }
+    &.-kbapp {
+      background-image: url(../images/img/img-visu-kbpage.png);
+    }
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 1.6rem;
+      color: $white-color;
+      font-size: 3.2rem;
+      line-height: 3.8rem;
+      font-family: 'Pretendard';
+      background-color: rgba(0, 0, 0, 0.7);
+      .label {
+        font-size: 1.8rem;
+        line-height: 2.1rem;
+        text-transform: uppercase;
+        opacity: 0.7;
+      }
+    }
+  }
+  + .footer {
+    margin-top: 0;
+  }
+}
+.detail-area {
+  width: calc(100% + 2.4rem);
+  margin-left: -1.2rem;
+  .detail-cell {
+    width: 100%;
+    height: auto;
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
 
 /* ==========================================================================
 	Media Queries for Responsive Design. (미디어 쿼리 분기점)
@@ -11,4 +125,60 @@
 /* 테블릿 */
 @media only screen and (min-width: 768px) {
   /* work */
+
+  //br태그 show-hide
+  .mobile-break {
+    display: none;
+  }
+  .pc-break {
+    display: inline-block;
+  }
+
+  .work-contents {
+    .sub-tit {
+      padding: 0 0 0 25.8rem;
+      font-size: 8rem;
+      line-height: 9.5rem;
+    }
+    .sub-txt-box {
+      margin-top: 11rem;
+      padding: 0 0 0 25.8rem;
+    }
+    .sub-txt {
+      font-weight: 500;
+      font-size: 3.2rem;
+      color: #555;
+    }
+    .info-box {
+      column-gap: 5.7rem;
+      flex-direction: row;
+      margin-top: 2.4rem;
+      dt {
+        font-size: 1.6rem;
+      }
+      dd {
+        font-size: 2rem;
+      }
+    }
+    .tag-box {
+      margin: 6rem 0;
+      .tag {
+        font-size: 1.8rem;
+        line-height: 4rem;
+      }
+    }
+    .next-page-box {
+      height: 50rem;
+      background-attachment: fixed;
+      a {
+        row-gap: 2rem;
+        font-size: 6rem;
+        line-height: 7.1rem;
+        .label {
+          font-size: 2.4rem;
+          line-height: 2.8rem;
+        }
+      }
+    }
+  }
 }
