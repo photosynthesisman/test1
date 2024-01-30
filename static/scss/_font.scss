@@ -1,8 +1,6 @@
 /* ============================
   Outfit
-
-  ttf 파일밖에 찾지 못해서
-  우선 index.html에 웹주소도 링크했습니다
+  unicode-range : 영문소문자, 영문 대문자, 숫자 
 ============================*/
 /* @import url(https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap);*/
 
@@ -171,6 +169,7 @@
 
 /* ============================
   pretendard
+    unicode-range : 국문
 ============================*/
 // @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css');
 
@@ -237,4 +236,3 @@
   src: local('Pretendard Thin'), url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/web/static/woff2/Pretendard-Thin.woff2) format('woff2'), url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/web/static/woff/Pretendard-Thin.woff) format('woff');
   unicode-range: U+AC00-D7A3;
 }
-/*# sourceMappingURL=/sm/51b565c04cae0bb1ce2c86cd5d1809aca984a92cb3f8e3efe91c4d2950752c00.map */

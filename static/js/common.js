@@ -9,14 +9,9 @@ function commonUI() {
 
     openBtn.on('click', function () {
       $(this).closest('body').delay().toggleClass('gnbPopup');
-      //menuPop.css({ display: 'block' });
     });
-    // closedBtn.on('click', function () {
-    //   //$(this).closest('.commonGnb').css({ display: 'none' });
-    //   $(this).closest('body').removeClass('gnbPopup');
-    // });
   }
-  //스크롤 top 버튼
+  // 스크롤 top 버튼
   function scrollTop() {
     const scrollArea = $('.contents-group-box .inner');
     const scrollBtn = $('.scroll-top');
@@ -53,7 +48,7 @@ function commonUI() {
   scrollTop();
 }
 
-//메인 script
+// 메인
 function mainUI() {
   const wrapper = document.querySelector('#container');
   const dragElement = document.querySelector('.main-slide-wrap');
@@ -65,7 +60,7 @@ function mainUI() {
   let initialX;
   let initialY;
 
-  //메인 배너 스와이퍼
+  // 메인 배너 스와이퍼
   const mainBanner = new Swiper('.main-swiper', {
     loop: true,
     preventInteractionOnTransition: false,
@@ -75,7 +70,7 @@ function mainUI() {
     }
   });
 
-  //메인 work 스와이퍼
+  // 메인 work 스와이퍼
   const workSlider = new Swiper('.small-swiper', {
     slidesPerView: 'auto',
     breakpoints: {
@@ -88,7 +83,7 @@ function mainUI() {
     }
   });
 
-  //메인 휠 스크롤,터치 무브 이벤트
+  // 메인 휠 스크롤,터치 무브 이벤트
   wrapper.addEventListener('mousedown', handleMouseDown);
   dragElement.addEventListener('touchstart', handleTouchStart);
   dragElement.addEventListener('wheel', handleWheel);
