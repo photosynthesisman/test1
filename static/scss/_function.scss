@@ -1,7 +1,7 @@
 @use 'sass:math';
 
 @function -vw($size, $contentWidth: 1920) {
-  @return max($size * 0.1rem, math.div($size, $contentWidth) * 100vw);
+  @return math.div($size, $contentWidth) * 100vw;
 }
 
 @function -per($height, $width) {
