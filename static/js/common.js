@@ -67,6 +67,7 @@ function commonUI() {
   menuPop();
   scrollTop();
 }
+commonUI();
 
 // 메인
 let mainBanner;
