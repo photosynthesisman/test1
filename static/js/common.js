@@ -4,7 +4,6 @@ function commonUI() {
   const $title = $.trim($('#pageTit').text());
   $gnbTxt.each(function () {
     if ($(this).text() === $title) {
-      console.log($(this).text(), $title);
       var $parents = $(this).parents('li');
       $parents.addClass('active');
     }
@@ -26,18 +25,30 @@ function commonUI() {
     });
 
     openBtn.on('click', function () {
-      $(this).closest('body').delay().toggleClass('gnbPopup');
+      const $this = $(this);
+      $this.closest('body').delay().toggleClass('gnbPopup');
+      if ($this.closest('body').hasClass('gnbPopup')) {
+        $this.attr('aria-label', '메뉴 닫힘');
+      } else {
+        $this.attr('aria-label', '메뉴 열림');
+      }
     });
   }
 
   // 스크롤 top 버튼
   function scrollTop() {
-    const scrollArea = $('.contents-group-box .inner');
+    let scrollArea;
     const scrollBtn = $('.scroll-top');
     const wrapper = document.querySelector('#container');
     const btn = scrollBtn.children();
 
     scrollBtn.hide();
+
+    if ($('#wrapper').hasClass('main')) {
+      scrollArea = $('.contents-group-box .inner');
+    } else {
+      scrollArea = $('#wrapper');
+    }
 
     scrollArea.scroll(function () {
       if ($(this).scrollTop() > 100) {
