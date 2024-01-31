@@ -108,10 +108,10 @@ function mainUI() {
     slidesPerView: 'auto',
     breakpoints: {
       1024: {
-        slidesPerView: 3.4
+        slidesPerView: 4.4
       },
       768: {
-        slidesPerView: 2.2
+        slidesPerView: 3.2
       }
     }
   });
@@ -247,4 +247,15 @@ function mapInit() {
   });
 
   marker1.setMap(map1);
+}
+
+kakakoMapInit();
+
+function workList() {
+  // init Masonry
+  var $grid = $('.grid').masonry({});
+  // layout Masonry after each image loads
+  $grid.imagesLoaded().progress(function () {
+    $grid.masonry('layout');
+  });
 }
