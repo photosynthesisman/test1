@@ -207,3 +207,44 @@ function mainUI() {
     return currentY >= cateListRect.top && currentY <= cateListRect.bottom;
   }
 }
+
+//map
+function mapInit() {
+  var mapLocation = {
+    x: 37.530733879674145,
+    y: 126.89887339311068
+  };
+  var mapContainer1 = document.getElementById('companymap');
+  var mapOptions1 = {
+    center: new kakao.maps.LatLng(mapLocation.x, mapLocation.y),
+    level: 3
+  };
+  var map1 = new kakao.maps.Map(mapContainer1, mapOptions1);
+
+  var markerPosition = new kakao.maps.LatLng(mapLocation.x, mapLocation.y);
+
+  var imageSrc = '../static/images/common/map_marker.png'; // 마커이미지의 주소
+  var imageSize;
+  var imageOption1;
+  if (window.innerWidth < 800) {
+    imageSize = new kakao.maps.Size(55, 64); // 마커이미지의 크기
+    imageOption1 = {
+      offset: new kakao.maps.Point(28, 64)
+    }; // 마커이미지의 옵션
+  } else {
+    imageSize = new kakao.maps.Size(110, 128); // 마커이미지의 크기
+    imageOption1 = {
+      offset: new kakao.maps.Point(55, 128)
+    }; // 마커이미지의 옵션
+  }
+
+  var markerImage1 = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption1),
+    markerPosition1 = new kakao.maps.LatLng(mapLocation.x, mapLocation.y);
+
+  var marker1 = new kakao.maps.Marker({
+    position: markerPosition1,
+    image: markerImage1
+  });
+
+  marker1.setMap(map1);
+}
