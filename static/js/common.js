@@ -257,3 +257,14 @@ function workList() {
     $grid.masonry('layout');
   });
 }
+
+kakakoMapInit();
+
+function workList() {
+  // init Masonry
+  var $grid = $('.grid').masonry({});
+  // layout Masonry after each image loads
+  $grid.imagesLoaded().progress(function () {
+    $grid.masonry('layout');
+  });
+}
