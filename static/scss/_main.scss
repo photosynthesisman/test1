@@ -248,15 +248,19 @@
           text-align: left;
           color: $black-color;
           .tit {
+            width: 50%;
             font-weight: 700;
             font-size: 2.4rem;
             line-height: 2.8rem;
+            color: $white-color;
           }
           .txt {
             margin-top: 0.6rem;
             font-weight: 400;
             font-size: 1.5rem;
             line-height: 2.2rem;
+            color: $white-color;
+            opacity: 0.6;
             word-break: keep-all !important;
             @include ellipsis($line: 2);
           }
