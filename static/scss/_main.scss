@@ -111,7 +111,7 @@
     }
     .round-box {
       padding-top: 4.8rem;
-      padding-bottom: 5rem;
+      padding-bottom: 2rem;
       background-color: $white-color;
       border-radius: $br-40;
       text-align: center;
@@ -207,12 +207,14 @@
         padding: 0 2.4rem;
         overflow: visible;
         .slide-cell {
-          width: 28rem;
+          width: 27.2rem;
           + .slide-cell {
-            margin-left: 1.6rem;
+            margin-left: 1.2rem;
           }
         }
         a {
+          position: relative;
+          height: 34.6rem;
           &:active,
           &:hover {
             .preview-box {
@@ -224,8 +226,12 @@
         }
 
         .preview-box {
-          height: 20rem;
-          border-radius: $br-12;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: $br-20;
           overflow: hidden;
           img {
             width: 100%;
@@ -236,20 +242,25 @@
           }
         }
         .context-box {
-          font-family: 'Pretendard';
-          margin-top: 2.4rem;
+          position: absolute;
+          top: 2.4rem;
+          left: 2.4rem;
           text-align: left;
           color: $black-color;
           .tit {
+            width: 50%;
             font-weight: 700;
             font-size: 2.4rem;
             line-height: 2.8rem;
+            color: $white-color;
           }
           .txt {
             margin-top: 0.6rem;
             font-weight: 400;
             font-size: 1.5rem;
             line-height: 2.2rem;
+            color: $white-color;
+            opacity: 0.6;
             word-break: keep-all !important;
             @include ellipsis($line: 2);
           }
@@ -410,7 +421,7 @@
           .btn-menu {
             margin-right: 0;
             top: 5rem;
-            right: 8.4rem;
+            right: 7rem;
             position: absolute;
           }
         }
@@ -456,13 +467,17 @@
         }
         .round-body {
           .career-slide-box {
-            padding: 0;
-            padding-right: 12rem;
-            width: calc(100% - 16rem);
+            padding: 0 8rem;
+            a {
+              height: -vw(470);
+              width: -vw(369);
+            }
             .preview-box {
-              height: auto;
+              border-radius: $br-40;
             }
             .context-box {
+              top: 3.2rem;
+              left: 3.2rem;
               .tit {
                 font-size: max(3.2rem, -vw(32));
                 line-height: max(3.8rem, -vw(32));
@@ -473,6 +488,7 @@
               }
             }
             .slide-cell {
+              width: auto;
               + .slide-cell {
                 margin-left: 4rem;
               }
@@ -520,7 +536,7 @@
         background-color: transparent;
         .btn-menu {
           position: absolute;
-          right: 7rem;
+          right: 8rem;
           top: 5rem;
         }
       }
@@ -528,7 +544,7 @@
         &.active {
           .header {
             .btn-menu {
-              right: 7rem;
+              right: 8rem;
               top: 5rem;
             }
           }
