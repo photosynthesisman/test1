@@ -105,15 +105,7 @@ function mainUI() {
 
   // 메인 work 스와이퍼
   const workSlider = new Swiper('.small-swiper', {
-    slidesPerView: 'auto',
-    breakpoints: {
-      1024: {
-        slidesPerView: 4.4
-      },
-      768: {
-        slidesPerView: 3.2
-      }
-    }
+    slidesPerView: 'auto'
   });
 
   // 메인 휠 스크롤,터치 무브 이벤트
