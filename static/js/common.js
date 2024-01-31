@@ -248,3 +248,12 @@ function mapInit() {
 
   marker1.setMap(map1);
 }
+
+function workList() {
+  // init Masonry
+  var $grid = $('.grid').masonry({});
+  // layout Masonry after each image loads
+  $grid.imagesLoaded().progress(function () {
+    $grid.masonry('layout');
+  });
+}
