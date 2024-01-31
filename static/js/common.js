@@ -10,6 +10,7 @@ function commonUI() {
   });
 
   function menuPop() {
+    const body = $('body');
     const openBtn = $('.header .btn-menu');
 
     document.addEventListener('scroll', function () {
@@ -26,11 +27,20 @@ function commonUI() {
 
     openBtn.on('click', function () {
       const $this = $(this);
-      $this.closest('body').delay().toggleClass('gnbPopup');
+
       if ($this.closest('body').hasClass('gnbPopup')) {
         $this.attr('aria-label', '메뉴 닫힘');
+        $('body').delay().removeClass('gnbPopup');
       } else {
         $this.attr('aria-label', '메뉴 열림');
+        $('body').delay().addClass('gnbPopup');
+      }
+    });
+
+    body.on('click', function (event) {
+      if (!openBtn.is(event.target) && !$('.commonGnb a').is(event.target)) {
+        console.log(1);
+        $('body').removeClass('gnbPopup');
       }
     });
   }
@@ -235,12 +245,13 @@ function kakakoMapInit() {
   });
   marker.setMap(map);
 }
-
 kakakoMapInit();
 
 function workList() {
   // init Masonry
-  var $grid = $('.grid').masonry({});
+  var $grid = $('.grid').masonry({
+    // fitWidth: true
+  });
   // layout Masonry after each image loads
   $grid.imagesLoaded().progress(function () {
     $grid.masonry('layout');
