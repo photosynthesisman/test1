@@ -81,7 +81,7 @@ function commonUI() {
 commonUI();
 
 // 메인
-let mainBanner;
+//let mainBanner;
 function mainUI() {
   const wrapper = document.querySelector('#container');
   const dragElement = document.querySelector('.main-slide-wrap');
